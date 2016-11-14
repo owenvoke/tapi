@@ -1,6 +1,6 @@
-# utpc (uploadToPrivateCache)
+# tAPI (torrentAPI)
 
-A hook for uploading to the private torrent database API for caching and web development projects.
+A hook for uploading to/downloading from the [private torrent database API](https://torrentapi.pxgamer.xyz) for caching and web development projects.
 
 ## Function calls
 
