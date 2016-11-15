@@ -1,7 +1,7 @@
 <?php
 
 namespace pxgamer {
-    class UTPC
+    class tAPI
     {
 		public static $api_endpoint = 'https://torrentapi.pxgamer.xyz/';
         public function __construct()
@@ -63,5 +63,5 @@ namespace pxgamer {
 		}
     }
 
-    $uTP = new \pxgamer\UTPC();
+    $tAPI = new \pxgamer\tAPI();
 }

@@ -1,6 +1,6 @@
 <?php
 
-include 'utpc.php';
+include 'tAPI.php';
 $response = '';
 if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file'])) {
     $response = json_decode($uTP::upload($_POST['api_key'], $_FILES['torrent_file']['tmp_name']));
@@ -16,7 +16,7 @@ if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file']))
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <script src="/assets/js/jquery-1.12.4.min.js" ></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <title>utpc</title>
+    <title>tAPI</title>
   </head>
   <body>
 	<nav class="navbar navbar-default">
@@ -28,7 +28,7 @@ if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file']))
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">utpc</a>
+          <a class="navbar-brand" href="/">tAPI</a>
         </div>
       </div>
     </nav>

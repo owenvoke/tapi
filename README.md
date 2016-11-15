@@ -5,9 +5,9 @@ A hook for uploading to/downloading from the [private torrent database API](http
 ## Function calls
 
 __Upload__  
-Usage: _`$uTP::upload($api_key, $file_path)`_  
+Usage: _`$tAPI::upload($api_key, $file_path)`_  
 Allows you to upload torrents to the private API using `POST`.
 
 __Download__  
-Usage: _`$uTP::download($api_key, $hash)`_  
+Usage: _`$tAPI::download($api_key, $hash)`_  
 Allows you to download torrents from the private API using `GET`.
