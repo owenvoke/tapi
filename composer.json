@@ -1,0 +1,32 @@
+{
+  "name": "pxgamer/tapi",
+  "type": "library",
+  "description": "A PHP class for utilising the TorrentAPI.",
+  "homepage": "https://github.com/PXgamer/tAPI",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "PXgamer",
+      "email": "owzie123@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/PXgamer/tAPI/issues"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/PXgamer/tAPI"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "pxgamer\\": "src/"
+    }
+  }
+}
