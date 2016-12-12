@@ -18,7 +18,9 @@ class MainTest extends PHPUnit_Framework_TestCase
 
     public function testCanDownloadTorrent()
     {
-        $response = json_decode(tAPI::download('*', ''));
+        $data = tAPI::download('*', '');
+        if (gettype($data) !== 'object') $data = (object)['status' => 'false'];
+        $response = json_decode($data);
         $this->assertObjectHasAttribute('status', $response);
     }
 
