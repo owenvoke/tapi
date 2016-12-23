@@ -1,27 +1,25 @@
 <?php
-use pxgamer\tAPI;
+use pxgamer\tAPI\Client;
 
 class MainTest extends PHPUnit_Framework_TestCase
 {
-
     public function testCanBeInitialised()
     {
-        $dirtyAPI = new tAPI();
-        $this->assertInstanceOf(tAPI::class, $dirtyAPI);
+        $tApiInstance = new Client;
+        $this->assertInstanceOf(Client::class, $tApiInstance);
     }
 
     public function testCanUploadTorrent()
     {
-        $response = tAPI::upload('null_api_key', null);
+        $tApiInstance = new Client;
+        $response = $tApiInstance->upload(null);
         $this->assertObjectHasAttribute('status', $response);
     }
 
     public function testCanDownloadTorrent()
     {
-        $data = tAPI::download('*', '');
-        $response = json_decode($data);
-        if (gettype($response) !== 'object') $response = (object)['status' => 'false'];
-        $this->assertObjectHasAttribute('status', $response);
+        $tApiInstance = new Client;
+        $data = $tApiInstance->download(null);
+        $this->assertObjectHasAttribute('status', $data);
     }
-
 }

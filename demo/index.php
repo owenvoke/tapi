@@ -1,12 +1,14 @@
 <?php
+use pxgamer\tAPI\Client;
 
-include '../src/tAPI.php';
-$uTP = new \pxgamer\tAPI();
+include '../vendor/autoload.php';
+$uTP = new Client;
 
 $response = '';
-if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file']))
-{
-    $response = json_decode($uTP::upload($_POST['api_key'], $_FILES['torrent_file']['tmp_name']));
+if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file'])) {
+    $uTP->setApiAuth($_POST['api_key']);
+    $response = json_decode($uTP->upload($_FILES['torrent_file']['tmp_name']));
+    $uTP->unsetApiAuth();
 }
 ?>
 <!DOCTYPE html>
@@ -50,7 +52,7 @@ if (isset($_POST) && isset($_POST['api_key']) && isset($_FILES['torrent_file']))
             <input type="submit" value="Upload" class="btn btn-default">
         </div>
     </form>
-    <?php echo ($response !== '') ? '<pre>' . json_encode($response, JSON_PRETTY_PRINT) . '</pre>' : ''; ?>
+    <?= ($response !== '') ? '<pre>' . json_encode($response, JSON_PRETTY_PRINT) . '</pre>' : '' ?>
 </div>
 </body>
 </html>

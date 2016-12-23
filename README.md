@@ -10,26 +10,59 @@ __Include the class:__
 ```php
 <?php
 require 'vendor/autoload.php';
-$tAPI = new \pxgamer\tAPI();
 ```
 - Including the file manually  
 ```php
 <?php
-include 'src/tAPI.php';
-$tAPI = new \pxgamer\tAPI();
+include 'src/Client.php';
 ```
 
-__Uploading a torrent__  
-`$tAPI::upload($code, $indentation);`  
-__Downloading a torrent__  
-`$tAPI::download($code, $indentation);`  
+Once included, you can initialise the class using either of the following:
+```php
+$tAPI = new \pxgamer\tAPI\Client;
+```
+```php
+use \pxgamer\tAPI\Client;
+$tAPI = new Client;
+```
 
-## Variables
+## Class Methods
 
-Variable Name | Variable Type | Variable Description      | Required?
-------------- | ------------- | ------------------------- | ---------
-`$api_key`       | String        | The code to be formatted. | true
-`$file_path`     | String       | The file to upload (upload only).     | false
-`$hash`     | String       | The torrent hash (download only).     | false
+Method Name           | Parameters | Returns
+--------------------- | ---------- | -------
+setApiAuth()          | string     | `string (json)`
+unsetApiAuth()        | void       | `string (json)`
+upload()              | string     | `string (json)`
+download()            | string     | `string (json)`
+
+## Examples
+
+### _Validating and signing in_
+```php
+$tAPI = new \pxgamer\tAPI\Client;
+$tAPI->setApiAuth('api_key');
+```
+Returns: `boolean`
+
+### _Signing out_
+```php
+$tAPI = new \pxgamer\tAPI\Client;
+$tAPI->unsetApiAuth();
+```
+Returns: `boolean`
+
+### _Uploading a torrent_
+```php
+$tAPI = new \pxgamer\tAPI\Client;
+$tAPI->upload('file_path');
+```
+Returns: `json`
+
+### _Downloading a torrent_
+```php
+$tAPI = new \pxgamer\tAPI\Client;
+$tAPI->download('info_hash');
+```
+Returns: `json` | `file_content`
 
 [ptdb]: https://torrentapi.pxgamer.xyz
