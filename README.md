@@ -30,10 +30,10 @@ $tAPI = new Client;
 
 Method Name           | Parameters | Returns
 --------------------- | ---------- | -------
-setApiAuth()          | string     | `string (json)`
-unsetApiAuth()        | void       | `string (json)`
+setApiAuth()          | string     | `boolean`
+unsetApiAuth()        | void       | `boolean`
 upload()              | string     | `string (json)`
-download()            | string     | `string (json)`
+download()            | string     | `string (json)` or `file_content`
 
 ## Examples
 
