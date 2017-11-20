@@ -27,8 +27,6 @@ $ composer require pxgamer/tapi
 
 ## Usage
 
-## Class Methods
-
 #### _Validating and signing in_
 
 ```php
