@@ -12,8 +12,6 @@ A PHP class for utilising the TorrentAPI.
 ## Structure
 
 ```
-bin/
-config/
 src/
 tests/
 vendor/
