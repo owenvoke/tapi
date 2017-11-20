@@ -1,7 +1,13 @@
 <?php
-use pxgamer\tAPI\Client;
 
-class MainTest extends PHPUnit_Framework_TestCase
+namespace pxgamer\tAPI;
+
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Class MainTest
+ */
+class MainTest extends TestCase
 {
     public function testCanBeInitialised()
     {
